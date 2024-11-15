@@ -3,6 +3,8 @@ import { CursoComponent } from './components/curso/curso.component';
 import { InsertarcursoComponent } from './components/curso/insertarcurso/insertarcurso.component';
 import { ReservaasesoriaComponent } from './components/reservaasesoria/reservaasesoria.component';
 import { InsertarreservaasesoriaComponent } from './components/reservaasesoria/insertarreservaasesoria/insertarreservaasesoria.component';
+import { ReporteslinoComponent } from './components/reporteslino/reporteslino.component';
+import { CantidadturnosComponent } from './components/reporteslino/cantidadturnos/cantidadturnos.component';
 
 export const routes: Routes = [
     {
@@ -32,5 +34,13 @@ export const routes: Routes = [
             component: InsertarreservaasesoriaComponent
           }
         ]
+      },
+      {
+        path:'querys',
+        component:ReporteslinoComponent,
+        children:[{
+          path:'cantreservas',
+          component:CantidadturnosComponent,
+        }]
       }
 ];

@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Reservaasesoria } from '../models/Reservaasesoria';
+import { Cantidadturnos } from '../models/Cantidadturnos';
 
 const base_url = environment.base;
 
@@ -38,4 +39,9 @@ export class ReservaasesoriaService {
   update(ras: Reservaasesoria) {
     return this.http.put(this.url, ras);
   } 
+  getCantidad(): Observable<Cantidadturnos[]> {
+    return this.http.get<Cantidadturnos[]>(
+      `${this.url}/cantidades`
+    );
+  }
 }
