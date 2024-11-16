@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
 <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
@@ -321,9 +322,29 @@
         </a>
       </div>
     </div>
+=======
+<mat-toolbar class="custom-toolbar" *ngIf="verificar()">
+  <div class="left-menu">
+    <button mat-button [routerLink]="['/homes']" style="color: white">
+      <mat-icon>home</mat-icon>Home
+    </button>
+    <button mat-button [matMenuTriggerFor]="menuUsers" style="color: white" *ngIf="isAdmin()">
+      <mat-icon>person</mat-icon>Usuarios
+    </button>
+    <button mat-button [matMenuTriggerFor]="menuRol" style="color: white" *ngIf="isAdmin()">
+      <mat-icon>folder_Managed</mat-icon>Roles
+    </button>
+    <button mat-button [matMenuTriggerFor]="menuProfesor" style="color: white" *ngIf="isAdmin()">
+      <mat-icon>school</mat-icon>Profesores
+    </button>
+    <button mat-button [matMenuTriggerFor]="menuModalidad" style="color: white" *ngIf="isAdmin()">
+      <mat-icon>filter_list</mat-icon>Modalidades
+    </button>
+>>>>>>> Stashed changes
   </div>
 </main>
 
+<<<<<<< Updated upstream
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
@@ -331,6 +352,35 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+=======
+<mat-menu #menuUsers="matMenu">
+  <button mat-menu-item routerLink="/usuarios">Listar</button>
+  <button mat-menu-item routerLink="/usuarios/nuevo">Registrar</button>
+</mat-menu>
+<mat-menu #menuRol="matMenu">
+  <button mat-menu-item routerLink="/roles">Listar</button>
+  <button mat-menu-item routerLink="/roles/nuevo">Registrar</button>
+</mat-menu>
+<mat-menu #menuProfesor="matMenu">
+  <button mat-menu-item routerLink="/profesores">Listar</button>
+  <button mat-menu-item routerLink="/profesores/nuevo">Registrar</button>
+</mat-menu>
+<mat-menu #menuModalidad="matMenu">
+  <button mat-menu-item routerLink="/modalidades">Listar</button>
+  <button mat-menu-item routerLink="/modalidades/nuevo">Registrar</button>
+</mat-menu>
+<mat-menu #menuSalir="matMenu">
+  <button mat-menu-item routerLink="/login" (click)="cerrar()">
+    <mat-icon>logout</mat-icon>
+    <span>Cerrar sesión</span>
+  </button>
+  <button mat-menu-item>
+    Rol:
+    <span>{{ rol }}</span>
+  </button>
+</mat-menu>
+<router-outlet></router-outlet>
+>>>>>>> Stashed changes
 
 
 <router-outlet />

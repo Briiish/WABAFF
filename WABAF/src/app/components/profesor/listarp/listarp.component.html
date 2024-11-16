@@ -1,0 +1,57 @@
+<div class="container">
+  <div style="text-align: center; margin: 5%"><h1>Lista de profesores</h1></div>
+  <div>
+    <table mat-table [dataSource]="datasource" class="mat-elevation-z8">
+      <ng-container matColumnDef="p1">
+        <th mat-header-cell *matHeaderCellDef>IDp</th>
+        <td mat-cell *matCellDef="let element">{{ element.idProfe }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="p2">
+        <th mat-header-cell *matHeaderCellDef>Codigo del Profesor</th>
+        <td mat-cell *matCellDef="let element">{{ element.codProfe }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="p3">
+        <th mat-header-cell *matHeaderCellDef>Nombre Profesor</th>
+        <td mat-cell *matCellDef="let element">{{ element.nombreProfe }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="p4">
+        <th mat-header-cell *matHeaderCellDef>Apellido Profesor</th>
+        <td mat-cell *matCellDef="let element">{{ element.apellidoProfe }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="p5">
+        <th mat-header-cell *matHeaderCellDef>Curso</th>
+        <td mat-cell *matCellDef="let element">{{ element.cursoProfe }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="p6">
+        <th mat-header-cell *matHeaderCellDef>Dia</th>
+        <td mat-cell *matCellDef="let element">{{ element.diaProfe }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="p7">
+        <th mat-header-cell *matHeaderCellDef>Turno</th>
+        <td mat-cell *matCellDef="let element">{{ element.turnoProfe }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="accion01">
+        <th mat-header-cell *matHeaderCellDef>Eliminar</th>
+        <td mat-cell *matCellDef="let element" (click)="delete(element.idProfe)">
+          <mat-icon style="color:#f4310a ;">delete</mat-icon>
+        </td> 
+      </ng-container>
+      <ng-container matColumnDef="accion02">
+        <th mat-header-cell *matHeaderCellDef>Actualizar</th>
+        <td mat-cell *matCellDef="let element" [routerLink]="['ediciones',element.idProfe]" >
+          <mat-icon style="color:#f4310a ;">edit</mat-icon>
+        </td> 
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</div>
