@@ -1,8 +1,4 @@
 import { Routes } from '@angular/router';
-<<<<<<< Updated upstream
-
-export const routes: Routes = [];
-=======
 import { UsersComponent } from './components/users/users.component';
 import { InsertaruComponent } from './components/users/insertaru/insertaru.component';
 import { RolComponent } from './components/rol/rol.component';
@@ -52,17 +48,17 @@ export const routes: Routes = [
         canActivate: [seguridadGuard],
     },
     {
-      path: 'profesores',
-      component: ProfesorComponent,
-      children: [
-        { 
-          path: 'nuevo', component: RegistrarpComponent
-        },
-        {
-          path:'ediciones/:id',component:RegistrarpComponent
-        }
-      ],
-      canActivate: [seguridadGuard],
+        path: 'profesores',
+        component: ProfesorComponent,
+        children: [
+          { 
+            path: 'nuevo', component: RegistrarpComponent
+          },
+          {
+            path:'ediciones/:id',component:RegistrarpComponent
+          }
+        ],
+        canActivate: [seguridadGuard],
     },
     {
       path: 'modalidades',
@@ -84,4 +80,4 @@ export const routes: Routes = [
     },
 
 ];
->>>>>>> Stashed changes
+
