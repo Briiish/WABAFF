@@ -21,11 +21,10 @@ import { CommonModule } from '@angular/common';
     MatIconModule,
 
     MatButtonModule,
-    UsersComponent,
+
     CommonModule,
 
     MatButtonModule
-
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

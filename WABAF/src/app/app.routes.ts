@@ -6,6 +6,10 @@ import { InsertarrlComponent } from './components/rol/insertarrl/insertarrl.comp
 import { LoginComponent } from './components/login/login.component';
 import { seguridadGuard } from './guard/seguridad.guard';
 import { HomeComponent } from './components/home/home.component';
+import { ProfesorComponent } from './components/profesor/profesor.component';
+import { RegistrarpComponent } from './components/profesor/registrarp/registrarp.component';
+import { ModalidadComponent } from './components/modalidad/modalidad.component';
+import { RegistrarmComponent } from './components/modalidad/registrarm/registrarm.component';
 
 export const routes: Routes = [
     {
@@ -44,9 +48,36 @@ export const routes: Routes = [
         canActivate: [seguridadGuard],
     },
     {
+        path: 'profesores',
+        component: ProfesorComponent,
+        children: [
+          { 
+            path: 'nuevo', component: RegistrarpComponent
+          },
+          {
+            path:'ediciones/:id',component:RegistrarpComponent
+          }
+        ],
+        canActivate: [seguridadGuard],
+    },
+    {
+      path: 'modalidades',
+      component: ModalidadComponent,
+      children: [
+        { 
+          path: 'nuevo', component: RegistrarmComponent
+        },
+        {
+          path:'ediciones/:id',component:RegistrarmComponent
+        }
+      ],
+      canActivate: [seguridadGuard],
+    },
+    {
       path: 'homes',
       component: HomeComponent,
       canActivate: [seguridadGuard],  
     },
 
 ];
+
