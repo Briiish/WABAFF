@@ -8,9 +8,12 @@ import { seguridadGuard } from './guard/seguridad.guard';
 import { HomeComponent } from './components/home/home.component';
 import { ProfesorComponent } from './components/profesor/profesor.component';
 
+import { RegistarpComponent } from './components/profesor/registarp/registarp.component';
+
 import { ModalidadComponent } from './components/modalidad/modalidad.component';
 import { RegistrarmComponent } from './components/modalidad/registrarm/registrarm.component';
-import { RegistarpComponent } from './components/profesor/registarp/registarp.component';
+
+
 
 export const routes: Routes = [
   {
