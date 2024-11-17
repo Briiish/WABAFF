@@ -10,30 +10,82 @@
       <br />
 
       <mat-form-field class="example-full-width">
+<<<<<<< Updated upstream:WABAF/src/app/components/profesor/registrarp/registrarp.component.html
         <mat-label>Codigo</mat-label>
         <input matInput placeholder="Ejem. ABC" formControlName="pcod" />
+=======
+        <mat-label>Cod.Profesor</mat-label>
+        <input matInput formControlName="pcod" />
+        <mat-error *ngIf="form.get('pcod')?.hasError('required')"
+          >El codigo de profesor es obligatorio.</mat-error
+        >
+>>>>>>> Stashed changes:WABAF/src/app/components/profesor/registarp/registarp.component.html
       </mat-form-field>
       <br />
 
       <mat-form-field class="example-full-width">
+<<<<<<< Updated upstream:WABAF/src/app/components/profesor/registrarp/registrarp.component.html
         <mat-label>Nombre</mat-label>
         <input matInput placeholder="Ejem. Oscar"  formControlName="pnombre" />
+=======
+          <mat-label>Nombre</mat-label>
+          <input matInput formControlName="pnombre" />
+          <mat-error *ngIf="form.get('pnombre')?.hasError('required')"
+          >El nombre es obligatorio.</mat-error
+        >
+>>>>>>> Stashed changes:WABAF/src/app/components/profesor/registarp/registarp.component.html
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
         <mat-label>Apellido</mat-label>
+<<<<<<< Updated upstream:WABAF/src/app/components/profesor/registrarp/registrarp.component.html
         <input matInput placeholder="Ejem. Reategui"  formControlName="papellido" />
+=======
+        <input matInput formControlName="papellido" />
+        <mat-error *ngIf="form.get('papellido')?.hasError('required')"
+          >El apellido es obligatorio.</mat-error
+        >
+>>>>>>> Stashed changes:WABAF/src/app/components/profesor/registarp/registarp.component.html
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
+<<<<<<< Updated upstream:WABAF/src/app/components/profesor/registrarp/registrarp.component.html
         <mat-label>Dia</mat-label>
         <input matInput placeholder="Ejem. Lunes"  formControlName="pdia" />
+=======
+          <mat-label>Curso</mat-label>
+          <input matInput formControlName="pcurso" />
+          <mat-error *ngIf="form.get('pcurso')?.hasError('required')"
+          >El curso es obligatorio.</mat-error
+        >
+>>>>>>> Stashed changes:WABAF/src/app/components/profesor/registarp/registarp.component.html
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
+<<<<<<< Updated upstream:WABAF/src/app/components/profesor/registrarp/registrarp.component.html
         <mat-label>Turno</mat-label>
         <input matInput placeholder="Ejem. Tarde"  formControlName="pturno" />
       </mat-form-field>
+=======
+          <mat-label>Dia</mat-label>
+          <input matInput formControlName="pdia" />
+          <mat-error *ngIf="form.get('pdia')?.hasError('required')"
+          >El dia es obligatorio.</mat-error
+        >
+      </mat-form-field>
+      <br />
+
+      <mat-form-field class="example-full-width">
+          <mat-label>Turno</mat-label>
+          <input matInput formControlName="pturno" />
+          <mat-error *ngIf="form.get('pturno')?.hasError('required')"
+          >El turno es obligatorio.</mat-error
+        >
+      </mat-form-field>
+      <br />
+
+
+>>>>>>> Stashed changes:WABAF/src/app/components/profesor/registarp/registarp.component.html
       <div style="text-align: center;">
         <button mat-flat-button  color="warn">Registrar</button>
       </div>

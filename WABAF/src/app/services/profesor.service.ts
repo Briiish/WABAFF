@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Profesor } from '../models/Profesor';
+import { ProfesorQ1DTO } from '../models/ProfesorQ1DTO';
+import { Q2cpxprofDTO } from '../models/Q2cpxprofDTO';
 
 const base_url = environment.base;
 
@@ -38,5 +40,11 @@ export class ProfesorService {
   }
   update(pr: Profesor) {
     return this.http.put(this.url, pr);
+  }
+  gethrxp():Observable<ProfesorQ1DTO[]>{
+    return this.http.get<ProfesorQ1DTO[]>(`${this.url}/hrxp`)
+  }
+  getcpxp():Observable<Q2cpxprofDTO[]>{
+    return this.http.get<Q2cpxprofDTO[]>(`${this.url}/cpxp`)
   }
 }

@@ -12,7 +12,10 @@
 
       <mat-form-field class="example-full-width">
         <mat-label>Descripcion</mat-label>
-        <input matInput placeholder="Ejem. ABC" formControlName="desmod" />
+        <input matInput placeholder="Ejem. virtual" formControlName="desmod" />
+        <mat-error *ngIf="form.get('desmod')?.hasError('required')"
+          >La descripcion es obligatoria.</mat-error
+        >
       </mat-form-field>
       
       <br />

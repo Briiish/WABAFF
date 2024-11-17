@@ -45,7 +45,7 @@ export class AppComponent {
     return this.rol === 'ADMIN';
   }
 
-  isClient() {
-    return this.rol === 'CLIENT';
+  isStudent() {
+    return this.rol === 'STUDENT';
   }
 }

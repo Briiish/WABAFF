@@ -12,12 +12,18 @@
         <mat-form-field class="example-full-width">
           <mat-label>Username</mat-label>
           <input matInput formControlName="username" />
+          <mat-error *ngIf="form.get('username')?.hasError('required')"
+          >El username es obligatorio.</mat-error
+        >
         </mat-form-field>
         <br />
 
         <mat-form-field class="example-full-width">
             <mat-label>Password</mat-label>
             <input matInput formControlName="password" />
+            <mat-error *ngIf="form.get('password')?.hasError('required')"
+          >La contraseña es obligatoria.</mat-error
+        >
         </mat-form-field>
         <br />
   
@@ -26,12 +32,18 @@
           <mat-select formControlName="enabled">
             <mat-option value="true">TRUE</mat-option>
             <mat-option value="false">FALSE</mat-option>
+            <mat-error *ngIf="form.get('enabled')?.hasError('required')"
+          >Obligatorio.</mat-error
+        >
           </mat-select>
         </mat-form-field>
   
         <mat-form-field class="example-full-width">
           <mat-label>cod.Usuario</mat-label>
           <input matInput formControlName="codUs" />
+          <mat-error *ngIf="form.get('codUs')?.hasError('required')"
+          >El codigo de usuario es obligatorio.</mat-error
+        >
         </mat-form-field>
   
         <br />
@@ -44,18 +56,28 @@
             [for]="picker"
             ></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
+
+            <mat-error *ngIf="form.get('freg')?.hasError('required')"
+            >La fecha es obligatoria.</mat-error
+          >
         </mat-form-field>
         <br />
 
         <mat-form-field class="example-full-width">
             <mat-label>Nombre</mat-label>
             <input matInput formControlName="nombre" />
+            <mat-error *ngIf="form.get('nombre')?.hasError('required')"
+          >El nombre es obligatorio.</mat-error
+        >
         </mat-form-field>
         <br />
 
         <mat-form-field class="example-full-width">
             <mat-label>Apellido</mat-label>
             <input matInput formControlName="apellido" />
+            <mat-error *ngIf="form.get('apellido')?.hasError('required')"
+          >El apellido es obligatorio.</mat-error
+        >
         </mat-form-field>
         <br />
         
@@ -72,11 +94,17 @@
               [for]="picker2"
             ></mat-datepicker-toggle>
             <mat-datepicker #picker2></mat-datepicker>
+            <mat-error *ngIf="form.get('fnac')?.hasError('required')"
+          >La fecha es obligatoria.</mat-error
+        >
           </mat-form-field>
 
         <mat-form-field class="example-full-width">
             <mat-label>Correo</mat-label>
             <input matInput formControlName="correo" />
+            <mat-error *ngIf="form.get('correo')?.hasError('required')"
+          >El correo es obligatorio.</mat-error
+        >
         </mat-form-field>
         <br />
 

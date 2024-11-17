@@ -1,0 +1,52 @@
+<div class="title-container" style="text-align: center; margin: 5%">
+    <h1>Registro de Comentarios</h1>
+  </div>
+  
+  <div class="title-container" style="text-align: center">
+    <form [formGroup]="form" (submit)="insertar()">
+  
+      <mat-form-field class="example-full-width" *ngIf="edicion">
+        <mat-label>Código</mat-label>
+        <input matInput formControlName="codigo" readonly />
+      </mat-form-field>
+      
+      <br />
+      <mat-form-field class="example-full-width">
+        <mat-label>Puntos</mat-label>
+        <input matInput formControlName="puntos" />
+        <mat-error *ngIf="form.get('puntos')?.hasError('required')"
+          >Los puntos son obligatorios.</mat-error
+        >
+      </mat-form-field>
+      <br />
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Reseña</mat-label>
+        <input matInput formControlName="resena" />
+        <mat-error *ngIf="form.get('resena')?.hasError('required')"
+          >La reseña es obligatoria.</mat-error
+        >
+      </mat-form-field>
+      <br />
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Profesor</mat-label>
+        <mat-select formControlName="profesor">
+          <mat-option *ngFor="let p of listaProfesores" [value]="p.idProfe">
+            {{p.nombreProfe}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="form.get('profesor')?.hasError('profesor')"
+        >El profesor es obligatorio.</mat-error>       
+     
+      </mat-form-field>
+      <br>
+  
+      <button mat-raised-button class="custom-button">Registrar</button>
+      
+  
+      
+    </form>
+  </div>
+  
+  
