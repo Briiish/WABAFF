@@ -1,0 +1,104 @@
+
+<mat-toolbar class="custom-toolbar" *ngIf="verificar()">
+  <div class="left-menu">
+    <button mat-button [routerLink]="['/homes']" style="color: white">
+      <mat-icon>home</mat-icon>Home
+    </button>
+    <button mat-button [matMenuTriggerFor]="menuUsers" style="color: white" *ngIf="isAdmin()">
+      <mat-icon>person</mat-icon>Usuarios
+    </button>
+    <button mat-button [matMenuTriggerFor]="menuRol" style="color: white" *ngIf="isAdmin()">
+      <mat-icon>folder_Managed</mat-icon>Roles
+    </button>
+    <button mat-button [matMenuTriggerFor]="menuProfesor" style="color: white" *ngIf="isAdmin()">
+      <mat-icon>school</mat-icon>Profesores
+    </button>
+    <button mat-button [matMenuTriggerFor]="menuModalidad" style="color: white" *ngIf="isAdmin()">
+      <mat-icon>filter_list</mat-icon>Modalidades
+    </button>
+    <button mat-button [matMenuTriggerFor]="menuComentario" style="color: white" *ngIf="isAdmin() || isStudent()">
+      <mat-icon>comment</mat-icon>Comentarios
+    </button>
+    <button mat-button [matMenuTriggerFor]="menuReserva" style="color: white" *ngIf="isAdmin() || isStudent()">
+      <mat-icon>list_alt</mat-icon>Reservas
+    </button>
+    <button mat-button [matMenuTriggerFor]="menuCurso" style="color: white" *ngIf="isAdmin()">
+      <mat-icon>book</mat-icon>Cursos
+      </button>
+    <button mat-button [matMenuTriggerFor]="menuReporte" style="color: white" *ngIf="isAdmin()">
+    <mat-icon>menu</mat-icon>Reportes
+    </button>
+  </div>
+  <div class="right-menu">
+    <button mat-button [matMenuTriggerFor]="menuSalir" style="color: white">
+      <mat-icon>account_circle</mat-icon>Usuario
+    </button>
+  </div>
+</mat-toolbar>
+
+
+<mat-menu #menuUsers="matMenu">
+  <button mat-menu-item routerLink="/usuarios"><mat-icon>playlist_add_check</mat-icon>Listar</button>
+  <button mat-menu-item routerLink="/usuarios/nuevo"><mat-icon>playlist_add</mat-icon>Registrar</button>
+</mat-menu>
+<mat-menu #menuRol="matMenu">
+  <button mat-menu-item routerLink="/roles"><mat-icon>playlist_add_check</mat-icon>Listar</button>
+  <button mat-menu-item routerLink="/roles/nuevo"><mat-icon>playlist_add</mat-icon>Registrar</button>
+</mat-menu>
+<mat-menu #menuProfesor="matMenu">
+  <button mat-menu-item routerLink="/profesores"><mat-icon>playlist_add_check</mat-icon>Listar</button>
+  <button mat-menu-item routerLink="/profesores/nuevo"><mat-icon>playlist_add</mat-icon>Registrar</button>
+</mat-menu>
+<mat-menu #menuModalidad="matMenu">
+  <button mat-menu-item routerLink="/modalidades"><mat-icon>playlist_add_check</mat-icon>Listar</button>
+  <button mat-menu-item routerLink="/modalidades/nuevo"><mat-icon>playlist_add</mat-icon>Registrar</button>
+</mat-menu>
+<mat-menu #menuComentario="matMenu">
+  <button mat-menu-item routerLink="/comentarios"><mat-icon>playlist_add_check</mat-icon>Listar</button>
+  <button mat-menu-item routerLink="/comentarios/nuevo"><mat-icon>playlist_add</mat-icon>Registrar</button>
+</mat-menu>
+<mat-menu #menuReserva="matMenu">
+  <button mat-menu-item routerLink="/reservas">Listar</button>
+  <button mat-menu-item routerLink="/reservas/nuevo">Registrar</button>
+</mat-menu>
+<mat-menu #menuCurso="matMenu">
+  <button mat-menu-item routerLink="/cursos">Listar</button>
+  <button mat-menu-item routerLink="/cursos/nuevo">Registrar</button>
+</mat-menu>
+<mat-menu #menuReporte="matMenu">
+  <button mat-menu-item routerLink="/reportes">
+    <mat-icon> bar_chart</mat-icon>
+    Horas Reservadas por Profesor
+  </button>
+  <button mat-menu-item routerLink="/reportes/cpxp">
+    <mat-icon> bar_chart</mat-icon>
+    Cantidad de puntos por Profesor
+  </button>
+  <button mat-menu-item routerLink="/reportes/hrxa">
+    <mat-icon> bar_chart</mat-icon>
+    Horas reservadas por estudiante
+  </button>
+  <button mat-menu-item routerLink="/reportes/axrt">
+    <mat-icon> bar_chart</mat-icon>
+    Horas reservadas por estudiante
+  </button>
+  <button mat-menu-item routerLink="/reportes/cantidades">
+    <mat-icon> pie_chart</mat-icon>
+    Cantidad por modalidad
+  </button>
+  <button mat-menu-item routerLink="/reportes/turnos">
+    <mat-icon> pie_chart</mat-icon>
+    Cantidad por turnos
+  </button>
+</mat-menu>
+<mat-menu #menuSalir="matMenu">
+  <button mat-menu-item routerLink="/login" (click)="cerrar()">
+    <mat-icon>logout</mat-icon>
+    <span>Cerrar sesión</span>
+  </button>
+  <button mat-menu-item>
+    Rol:
+    <span>{{ rol }}</span>
+  </button>
+</mat-menu>
+<router-outlet></router-outlet>

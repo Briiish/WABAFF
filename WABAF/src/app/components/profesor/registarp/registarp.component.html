@@ -1,0 +1,71 @@
+<div class="title-container">
+  <div class="container" style="text-align: center;margin:5%"><h1>Registro de Profesores</h1></div>
+  <div class="container" style="text-align: center">
+    <form [formGroup]="form" (submit)="insertar()" >
+
+      <mat-form-field class="example-full-width" *ngIf="edicion">
+        <mat-label>Código</mat-label>
+        <input matInput  formControlName="codigo" readonly="true"/>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Cod.Profesor</mat-label>
+        <input matInput formControlName="pcod" />
+        <mat-error *ngIf="form.get('pcod')?.hasError('required')"
+        >El codigo de profesor es obligatorio.</mat-error
+      >
+      <mat-error *ngIf="form.get('pcod')?.hasError('pattern')"
+        >Debe ser un número.</mat-error
+      >
+      </mat-form-field>
+      <br />
+
+      <mat-form-field class="example-full-width">
+          <mat-label>Nombre</mat-label>
+          <input matInput formControlName="pnombre" />
+          <mat-error *ngIf="form.get('pnombre')?.hasError('required')"
+        >El nombre es obligatorio.</mat-error
+      >
+      </mat-form-field>
+      <br />
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Apellido</mat-label>
+        <input matInput formControlName="papellido" />
+        <mat-error *ngIf="form.get('papellido')?.hasError('required')"
+        >El apellido es obligatorio.</mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field class="example-full-width">
+          <mat-label>Curso</mat-label>
+          <input matInput formControlName="pcurso" />
+          <mat-error *ngIf="form.get('pcurso')?.hasError('required')"
+        >El curso es obligatorio.</mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field class="example-full-width">
+          <mat-label>Dia</mat-label>
+          <input matInput formControlName="pdia" />
+          <mat-error *ngIf="form.get('pdia')?.hasError('required')"
+        >El dia es obligatorio.</mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field class="example-full-width">
+          <mat-label>Turno</mat-label>
+          <input matInput formControlName="pturno" />
+          <mat-error *ngIf="form.get('pturno')?.hasError('required')"
+        >El turno es obligatorio.</mat-error>
+      </mat-form-field>
+      <br />
+
+
+      <div style="text-align: center;">
+        <button mat-flat-button  color="warn">Registrar</button>
+      </div>
+    </form>
+  </div>
+</div>

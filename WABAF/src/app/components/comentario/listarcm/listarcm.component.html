@@ -1,0 +1,42 @@
+<div class="container">
+  <div style="text-align: center; margin: 5%"><h1>Comentarios</h1></div>
+  <div>
+    <table mat-table [dataSource]="datasource" class="mat-elevation-z8">
+      <ng-container matColumnDef="cm1">
+        <th mat-header-cell *matHeaderCellDef>Codigo</th>
+        <td mat-cell *matCellDef="let element">{{ element.idCo }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="cm2">
+        <th mat-header-cell *matHeaderCellDef>Puntos</th>
+        <td mat-cell *matCellDef="let element">{{ element.puntosCo }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="cm3">
+        <th mat-header-cell *matHeaderCellDef>Resena</th>
+        <td mat-cell *matCellDef="let element">{{ element.resenaCo }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="cm4">
+        <th mat-header-cell *matHeaderCellDef>Profesor</th>
+        <td mat-cell *matCellDef="let element">{{ element.pro.nombreProfe }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="accion01">
+        <th mat-header-cell *matHeaderCellDef>Eliminar</th>
+        <td mat-cell *matCellDef="let element" (click)="delete(element.idCo)">
+          <mat-icon style="color:#f4310a ;">delete_forever</mat-icon>
+        </td> 
+      </ng-container>
+      <ng-container matColumnDef="accion02">
+        <th mat-header-cell *matHeaderCellDef>Actualizar</th>
+        <td mat-cell *matCellDef="let element" [routerLink]="['ediciones',element.idCo]" >
+          <mat-icon style="color:#51f728 ;">sync</mat-icon>
+        </td> 
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</div>
